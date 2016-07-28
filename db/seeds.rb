@@ -49,6 +49,15 @@ cat1.products.create!({
 })
 
 cat1.products.create!({
+  name:  'Hipster Hat no. 2',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('apparel3.jpg'),
+  quantity: 0,
+  price: 124.99
+})
+
+
+cat1.products.create!({
   name:  'Hipster Hat',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel3.jpg'),
