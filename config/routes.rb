@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
+  
+  # these routes are for showing users a login form, logging them in, and logging them out.
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
+  resource :user, only: [:new, :create]
 
   resource :cart, only: [:show] do
     put    :add_item
