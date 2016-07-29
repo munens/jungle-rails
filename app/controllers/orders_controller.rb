@@ -1,9 +1,13 @@
+
 class OrdersController < ApplicationController
 
    before_filter :authorize
-  
+
   def show
     @order = Order.find(params[:id])
+    @order_items = @order.line_items
+    puts @order_items.inspect
+  
   end
 
   def create
