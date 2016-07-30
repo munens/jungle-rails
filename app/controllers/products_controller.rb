@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
+    @reviews = @product.reviews.order(created_at: :desc)
+
+    puts @reviews.inspect
+    # @review = Review.new
   end
 
 end

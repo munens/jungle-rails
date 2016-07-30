@@ -10,24 +10,23 @@
         <tr>
           <th colspan="2">Product</th>
           <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Price</th>
+          <th>Quantity</th>   
         </tr>
       </thead>
       <tbody>
         <% @order_total = 0 %>
         <% @order_items.each do |order_item| %>
-          <%=@order_total += order_item.product.price %>
-          <%= render 'item', item: order_item.product %>
+          <% @order_total += (order_item.total_price_cents * order_item.quantity) %>
+          <%= render "item", order_item: order_item %>
         <% end %>
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="4">
+          <th colspan="3">
             TOTAL:
           </th>
           <th>
-            <%= "$#{@order_total}" %>
+            <%= "$#{@order_total/100.to_f}" %>
           </th>
         </tr>
       </tfoot>
