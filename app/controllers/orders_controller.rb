@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order_items = @order.line_items
     puts @order_items.inspect
-  
+
   end
 
 
@@ -17,7 +17,13 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
+      
+      @ord = Order.find(current_user.id)
+
+      UserMailer.order_email(@ord, current_user).deliver_now
+      puts "yeeeeeeeeeeeeeeeeeeeeeeeeeeeee #{@ord.inspect} and: #{@ord.line_items.inspect}"
       redirect_to order, notice: 'Your Order has been placed.'
+      puts "yippeeeeeeeeeeeeeeeeeeeeeeeeeeeee!!!"
     else
       redirect_to cart_path, error: order.errors.full_messages.first
     end
