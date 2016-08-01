@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
     @reviews = @product.reviews.order(created_at: :desc)
 
     puts @reviews.inspect
-    # @review = Review.new
+    #needed for form show:
+    @review = Review.new
   end
 
 end

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-	before_filter :authorize :only [:delete]
+	before_filter :authorize, only: [:delete]
 
 	def create
 		@product = Product.find params[:product_id]
@@ -23,8 +23,8 @@ class ReviewsController < ApplicationController
 	end
 
 	def destroy
-		@review_delete = Review.find params[:id]
-		@review_delete.destroy
+		@review = Review.find params[:id]
+		@review.destroy
 		redirect_to :root
 
 	end

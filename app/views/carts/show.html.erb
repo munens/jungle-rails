@@ -5,10 +5,14 @@
   </header>
 
   <div class="panel panel-default items">
-    <% if @cart_total = 0 %>
+    <% if cart.length == 0 %>
+
       <%= "There are no items in your cart" %>
       <%= link_to 'Back to home', :root %>
+      <% @cart_total = 0 %>
+
     <% else %>
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -35,6 +39,7 @@
         </tr>
       </tfoot>
     </table>
+
     <% end %>
   </div>
 

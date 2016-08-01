@@ -33,6 +33,7 @@ gem 'font-awesome-rails'
 gem 'money-rails'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'pry'
 gem 'stripe'
 gem 'faker'
 
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
