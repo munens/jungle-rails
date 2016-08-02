@@ -23,8 +23,6 @@ RSpec.feature "Navigate to the product details page", type: :feature, js: true d
 		# ACT
 		visit root_path
 
-		puts page.html
-
 		# click_link('.actions a .btn.btn-default.pull-right')
 		click_on 'Details'
 
@@ -32,8 +30,6 @@ RSpec.feature "Navigate to the product details page", type: :feature, js: true d
 		save_screenshot
 
 		# puts page.html
-
-		
 
 
 		expect(page.has_selector?('main section.products-show')).to eq(true)
