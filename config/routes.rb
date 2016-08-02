@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     delete :remove_item
   end
 
+  resource :login, only: [:create]
 
 
   resources :orders, only: [:create, :show]
