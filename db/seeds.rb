@@ -144,7 +144,7 @@ product = cat3.products.create!({
 user = User.create!({first_name: "Phil",
   last_name: 'Jama',
   email: 'pjama@gmail.com',
-  password_digest: 'hello'
+  password_digest: 'hello1233898'
 })
 
 puts user.inspect
